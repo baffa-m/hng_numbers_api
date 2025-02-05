@@ -3,7 +3,6 @@ import requests
 from typing import List
 
 def is_prime(n: int) -> bool:
-    n = abs(n)
     if n < 2:
         return False
     for i in range(2, int(math.sqrt(n)) + 1):
