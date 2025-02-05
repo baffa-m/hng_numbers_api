@@ -3,6 +3,7 @@ import requests
 from typing import List
 
 def is_prime(n: int) -> bool:
+    n = abs(n)
     if n < 2:
         return False
     for i in range(2, int(math.sqrt(n)) + 1):
@@ -11,11 +12,13 @@ def is_prime(n: int) -> bool:
     return True
 
 def is_perfect(n: int) -> bool:
+    n = abs(n)
     if n < 1:
         return False
     return sum(i for i in range(1, n) if n % i == 0) == n
 
 def is_armstrong(n: int) -> bool:
+    n = abs(n)
     num_str = str(n)
     power = len(num_str)
     return sum(int(digit) ** power for digit in num_str) == n
